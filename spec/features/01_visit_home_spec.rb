@@ -9,4 +9,8 @@ feature 'Visit The-Internet Home Page' do
     expect(page).to have_content('MAD-MUSIC')
     expect(page).to have_css('a', text: 'MAD-MUSIC')
   end
+
+  scenario 'Current URL: https://madmusic9.herokuapp.com/' do
+    expect(page).to have_current_path('https://madmusic9.herokuapp.com/')
+  end
 end
