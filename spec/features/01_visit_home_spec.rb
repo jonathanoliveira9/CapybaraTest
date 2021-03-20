@@ -24,13 +24,16 @@ feature 'Visit The-Internet Home Page' do
   end
 
   scenario 'Click Dropdown and Sign Up => Navigate to /users/sign_up' do
-
-  end
-
-  scenario 'Click Dropdown and Sign In => Navigate to /users/sign_in' do
     find('#dropdownMenuLink').click
     expect(page).to have_css(".mm-cl-white", text: 'SIGN-UP')
     find('.mm-cl-white', text: 'SIGN-UP').click
     expect(page).to have_current_path('/users/sign_up')
+  end
+
+  scenario 'Click Dropdown and Sign In => Navigate to /users/sign_in' do
+    find('#dropdownMenuLink').click
+    expect(page).to have_css(".mm-cl-white", text: 'SIGN-IN')
+    find('.mm-cl-white', text: 'SIGN-IN').click
+    expect(page).to have_current_path('/users/sign_in')
   end
 end
