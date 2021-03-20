@@ -1,0 +1,17 @@
+require 'spec_helper'
+require_relative '../support/helpers/login_helper'
+
+feature 'Register Brand' do
+  include Helpers::LoginHelper
+
+  background do
+    visit '/'
+  end
+
+  scenario 'Displayed Title Modal: Register Brand' do
+    sign_in_as('jonathanoliveira@test.com', '123456')
+    click_on('BRANDS')
+    click_on('Novo')
+    expect(page).to have_content('Register Brand')
+  end
+end
