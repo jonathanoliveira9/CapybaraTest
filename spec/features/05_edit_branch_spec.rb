@@ -20,7 +20,7 @@ feature 'Register Brand' do
   scenario 'Edit Brand Modal: Success to Edit' do
     sign_in_as('jonathanoliveira@test.com', '123456')
     click_on('BRANDS')
-    first_element = first_element('.list-group-item-action', match: :first)
+    first_element = find('.list-group-item-action', match: :first)
     first_element.click
     click_on('Edit')
     fill_in('Nome Fantasia', with: Faker::Game.title)
